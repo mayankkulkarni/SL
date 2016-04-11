@@ -1,0 +1,36 @@
+macro
+mac1
+mover areg m
+add breg m
+movem creg m  
+mend
+macro
+eval &x &y &z
+mover areg &x
+sub areg &y
+add areg &z
+mover areg &z
+mend
+macro
+calc &x &y &op=mult &lab=
+&lab mover areg &x
+&op areg &y
+movem areg &x
+mend
+start
+movem areg b
+eval a b c
+add areg n
+movem areg n
+calc p q lab=loop
+movem areg n
+mac1
+calc p q op=div lab=next
+m ds 1
+a ds 5
+b ds 1  
+c ds 1
+n ds 1
+p ds 1
+q ds 1  
+end

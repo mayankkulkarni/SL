@@ -1,0 +1,22 @@
+start
+movem areg b
+add areg n
+movem areg n
+movem areg n
+mac2
+movem creg p
+movem creg q
+mac1
+movem breg a
+movem breg b
+add breg q
+eval
+m ds 1
+a ds 5
+b ds 1  
+c ds 1
+n ds 1
+p ds 1
+q ds 1  
+end
+
